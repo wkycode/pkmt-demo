@@ -1,25 +1,112 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css"
+import theme from "./style/theme"
+import NavBar from "./components/NavBar"
+import HeroSection from "./sections/hero"
+import { Box, Container, ThemeProvider } from "@mui/material"
+import FeaturesSection from "./sections/features"
+import { useEffect, useRef, useState } from "react"
+import AboutSection from "./sections/about"
+import ContactUs from "./components/ContactUs/indexl"
+import Footer from "./components/Layout/Footer"
 
 function App() {
+  const contactRef = useRef(null)
+  const [scrollTop, setScrollTop] = useState(0)
+
+  useEffect(() => {
+    const onScroll = (e) => {
+      setScrollTop(e.target.documentElement.scrollTop)
+    }
+    window.addEventListener("scroll", onScroll)
+
+    return () => window.removeEventListener("scroll", onScroll)
+  }, [scrollTop])
+
+  useEffect(() => {
+    console.log(scrollTop)
+  })
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <ThemeProvider theme={theme}>
+      <Box
+        sx={{
+          overflowX: "clip",
+          position: "relative",
+        }}
+      >
+        <Box>
+          <img
+            className="hero_background"
+            src="/images/heroBackground.png"
+            alt="Hero Background"
+          />
+        </Box>
+        {/* TOP DONUT */}
+        <Box
+          sx={{
+            position: "absolute",
+            width: "270px",
+            height: "270px",
+            top: "-67px",
+            left: "67%",
+            visibility: "visible",
+            willChange: "transform",
+            transform: `rotate(${0 + scrollTop / 6}deg)`,
+          }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+          <img src="/images/donut.png" className="img-fluid" alt="donut" />
+        </Box>
+        {/* LEFT DONUT */}
+        <Box
+          sx={{
+            position: "absolute",
+            width: "610px",
+            height: "610px",
+            top: "90px",
+            left: "-210px",
+            visibility: "visible",
+            willChange: "transform",
+            transform: `rotate(${0 + scrollTop / 4}deg)`,
+          }}
+        >
+          <img src="/images/donut.png" className="img-fluid" alt="donut" />
+        </Box>
+        {/* RIGHT DONUT */}
+        <Box
+          sx={{
+            position: "absolute",
+            width: "396px",
+            height: "396px",
+            top: "780px",
+            right: "-145px",
+            visibility: "visible",
+            willChange: "transform",
+            transform: `rotate(${0 + scrollTop / 6}deg)`,
+          }}
+        >
+          <img src="/images/donut.png" className="img-fluid" alt="donut" />
+        </Box>
+        <Box
+          className="App"
+          sx={{
+            // height: "500vh",
+            background: "rgba(17, 19, 26, 1)",
+          }}
+        >
+          <NavBar contactRef={contactRef} />
+          <Container maxWidth="xl">
+            <HeroSection />
+            <FeaturesSection />
+            <AboutSection />
+            <Box ref={contactRef} sx={{ paddingY: "2.25rem" }}>
+              <ContactUs />
+            </Box>
+          </Container>
+        </Box>
+        <Footer />
+      </Box>
+    </ThemeProvider>
+  )
 }
 
-export default App;
+export default App
