@@ -8,6 +8,7 @@ import { useEffect, useRef, useState } from "react"
 import AboutSection from "./sections/about"
 import ContactUs from "./components/ContactUs"
 import Footer from "./components/Layout/Footer"
+import NewsSection from "./sections/News"
 
 function App() {
   const contactRef = useRef(null)
@@ -94,7 +95,14 @@ function App() {
             <HeroSection />
             <FeaturesSection />
             <AboutSection />
-            <Box ref={contactRef} sx={{ paddingY: "2.25rem" }}>
+            <NewsSection />
+            <Box
+              ref={contactRef}
+              sx={(theme) => ({
+                paddingBottom: "1.5rem",
+                [theme.breakpoints.up("md")]: { paddingBottom: "2.5rem" },
+              })}
+            >
               <ContactUs />
             </Box>
           </Container>

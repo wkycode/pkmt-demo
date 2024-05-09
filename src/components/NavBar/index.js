@@ -22,7 +22,7 @@ const NavBar = ({ contactRef }) => {
           className="img-fluid"
           src="/images/brandLogo.png"
         />
-        ;
+        &nbsp;
         <Typography
           component="a"
           href="/"

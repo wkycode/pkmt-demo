@@ -53,7 +53,7 @@ const FeatureCard = ({ logo, title, content }) => {
             align="center"
             sx={{
               fontSize: "1rem",
-              color: "#ffffff",
+              color: "#CBD1EA",
             }}
           >
             {content}

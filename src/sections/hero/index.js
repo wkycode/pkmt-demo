@@ -38,7 +38,8 @@ const HeroSection = () => {
           [theme.breakpoints.up("md")]: { fontSize: "2.25rem" },
         })}
       >
-        Simplifying the transition to Web3 for businesses and users
+        Simplifying the transition to Web3 <br />
+        for businesses and users
       </Typography>
       <Box sx={{ marginTop: "2.25rem" }}>
         <ContactUs />

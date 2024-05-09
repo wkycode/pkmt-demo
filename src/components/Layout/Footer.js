@@ -12,6 +12,7 @@ const Footer = () => {
           borderTop: "3px solid #ffffff",
           backgroundColor: "rgba(17, 19, 26, 1)",
           padding: desktopView ? "2rem" : "1rem",
+          borderRadius: 0,
         }}
       >
         <Box
@@ -19,7 +20,18 @@ const Footer = () => {
             height: "100%",
           }}
         >
-          <Typography color="white">PKT</Typography>
+          <Box display="flex" justifyContent="center" alignItems="center">
+            <Typography
+              sx={{
+                color: "#ffffff",
+                fontSize: "1.25rem",
+                fontWeight: "700",
+                textDecoration: "none",
+              }}
+            >
+              © 2024 PKMT Limited
+            </Typography>
+          </Box>
         </Box>
       </Paper>
     </footer>
