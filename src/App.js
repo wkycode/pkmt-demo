@@ -99,8 +99,8 @@ function App() {
             <Box
               ref={contactRef}
               sx={(theme) => ({
-                paddingBottom: "1.5rem",
-                [theme.breakpoints.up("md")]: { paddingBottom: "2.5rem" },
+                paddingBottom: "3.125rem",
+                [theme.breakpoints.up("md")]: { paddingBottom: "7.5rem" },
               })}
             >
               <ContactUs />

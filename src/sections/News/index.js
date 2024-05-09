@@ -517,9 +517,9 @@ const NewsSection = () => {
     <Box
       sx={(theme) => ({
         zIndex: 1,
-        marginY: "1.5rem",
+        marginY: "3.125rem",
         position: "relative",
-        [theme.breakpoints.up("md")]: { marginY: "2.5rem" },
+        [theme.breakpoints.up("md")]: { marginY: "7.55rem" },
       })}
     >
       <Box sx={{ display: "flex", justifyContent: "center" }}>
