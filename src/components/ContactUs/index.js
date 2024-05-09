@@ -1,10 +1,9 @@
 import {
   Box,
-  Divider,
-  IconButton,
-  InputAdornment,
-  InputBase,
   Paper,
+  Divider,
+  InputBase,
+  IconButton,
   Typography,
 } from "@mui/material"
 import DirectionsIcon from "@mui/icons-material/Directions"
@@ -25,8 +24,8 @@ const ContactUs = () => {
           marginBottom: "1.25rem",
           maxWidth: 920,
           color: "#ffffff",
-          fontSize: "1.25rem",
-          [theme.breakpoints.up("lg")]: { fontSize: "1.75rem" },
+          fontSize: "1.1rem",
+          [theme.breakpoints.up("md")]: { fontSize: "1.75rem" },
         })}
       >
         Ready to experience the future? Contact us!
@@ -35,12 +34,13 @@ const ContactUs = () => {
       <Paper
         component="form"
         sx={{
+          width: 320,
           p: "2px 4px",
           display: "flex",
+          maxWidth: "100%",
           alignItems: "center",
-          width: 400,
-          background: "rgba(0,0,0, 0.35)",
           border: "1px solid white",
+          background: "rgba(0,0,0, 0.35)",
         }}
       >
         <InputBase

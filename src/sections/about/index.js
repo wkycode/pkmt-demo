@@ -67,7 +67,7 @@ const AboutSection = () => {
             <Box
               sx={(theme) => ({
                 top: 0,
-                padding: "3rem",
+                padding: "2rem",
                 position: "sticky",
                 [theme.breakpoints.up("md")]: { padding: "4rem" },
               })}
@@ -77,9 +77,8 @@ const AboutSection = () => {
                 align="left"
                 sx={(theme) => ({
                   fontWeight: "700",
-                  marginTop: "1.25rem",
                   color: "#ffffff",
-                  fontSize: "1.75rem",
+                  fontSize: "1.5rem",
                   [theme.breakpoints.up("md")]: { fontSize: "2.25rem" },
                 })}
               >
@@ -89,13 +88,13 @@ const AboutSection = () => {
                 variant="h2"
                 align="left"
                 sx={(theme) => ({
-                  fontWeight: "700",
-                  marginTop: "1.25rem",
+                  lineHeight: 1.5,
                   color: "#CBD1EA",
                   fontSize: "1rem",
+                  fontWeight: "700",
+                  marginTop: "1.25rem",
                   [theme.breakpoints.up("md")]: {
                     maxWidth: "500px",
-                    fontSize: "1.25rem",
                   },
                 })}
               >
@@ -114,10 +113,10 @@ const AboutSection = () => {
             <Box
               sx={(theme) => ({
                 borderLeft: "1px solid rgba(255,255,255,0.55)",
-                margin: "1rem 3rem 3rem 3rem",
+                margin: "0 2rem 2rem 2rem",
                 [theme.breakpoints.up("md")]: {
                   margin: "0",
-                  padding: "2rem 0",
+                  padding: "2rem",
                 },
               })}
             >
@@ -125,7 +124,13 @@ const AboutSection = () => {
                 return (
                   <Box
                     key={index}
-                    sx={{ position: "relative", padding: "1.5rem 3.5rem" }}
+                    sx={(theme) => ({
+                      position: "relative",
+                      padding: ".75rem 1.75rem",
+                      [theme.breakpoints.up("md")]: {
+                        padding: "1.5rem 3.5rem",
+                      },
+                    })}
                   >
                     <Box
                       sx={{
@@ -144,11 +149,11 @@ const AboutSection = () => {
                       sx={(theme) => ({
                         fontWeight: "700",
                         color: "#ffffff",
-                        fontSize: "1.5rem",
-                        // [theme.breakpoints.up("lg")]: {
-                        //   maxWidth: "500px",
-                        //   fontSize: "1.25rem",
-                        // },
+                        fontSize: "1.25rem",
+                        [theme.breakpoints.up("md")]: {
+                          maxWidth: "500px",
+                          fontSize: "1.5rem",
+                        },
                       })}
                     >
                       {block.title}
@@ -159,7 +164,7 @@ const AboutSection = () => {
                         align="left"
                         sx={(theme) => ({
                           color: "#CBD1EA",
-                          fontSize: "1.1rem",
+                          fontSize: "1rem",
                         })}
                       >
                         &#10003; {p}

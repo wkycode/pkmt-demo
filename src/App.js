@@ -6,7 +6,7 @@ import { Box, Container, ThemeProvider } from "@mui/material"
 import FeaturesSection from "./sections/features"
 import { useEffect, useRef, useState } from "react"
 import AboutSection from "./sections/about"
-import ContactUs from "./components/ContactUs/indexl"
+import ContactUs from "./components/ContactUs"
 import Footer from "./components/Layout/Footer"
 
 function App() {

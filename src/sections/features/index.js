@@ -39,7 +39,7 @@ const FeaturesSection = () => {
         marginTop: "3.125rem",
         flexDirection: "column",
         justifyContent: "center",
-        [theme.breakpoints.up("lg")]: { marginTop: "7.5rem" },
+        [theme.breakpoints.up("md")]: { marginTop: "7.5rem" },
       })}
     >
       <Grid container spacing={2} sx={{ alignItems: "stretch" }}>

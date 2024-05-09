@@ -1,5 +1,5 @@
 import { Box, Typography } from "@mui/material"
-import ContactUs from "../../components/ContactUs/indexl"
+import ContactUs from "../../components/ContactUs"
 
 const HeroSection = () => {
   return (
@@ -12,7 +12,7 @@ const HeroSection = () => {
         marginTop: "3.125rem",
         flexDirection: "column",
         justifyContent: "center",
-        [theme.breakpoints.up("lg")]: { marginTop: "7.5rem" },
+        [theme.breakpoints.up("md")]: { marginTop: "7.5rem" },
       })}
     >
       <Typography
@@ -22,7 +22,7 @@ const HeroSection = () => {
         sx={(theme) => ({
           color: "#ffffff",
           fontSize: "2.5rem",
-          [theme.breakpoints.up("lg")]: { fontSize: "3.125rem" },
+          [theme.breakpoints.up("md")]: { fontSize: "3.125rem" },
         })}
       >
         DRIVING WEB3 ADOPTION
@@ -35,7 +35,7 @@ const HeroSection = () => {
           maxWidth: 920,
           color: "#CBD1EA",
           fontSize: "1.25rem",
-          [theme.breakpoints.up("lg")]: { fontSize: "2.25rem" },
+          [theme.breakpoints.up("md")]: { fontSize: "2.25rem" },
         })}
       >
         Simplifying the transition to Web3 for businesses and users

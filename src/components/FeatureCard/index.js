@@ -13,15 +13,18 @@ const FeatureCard = ({ logo, title, content }) => {
       elevation={8}
     >
       <CardContent
-        sx={{
+        sx={(theme) => ({
           display: "flex",
           height: "100%",
-          padding: "1.5rem",
+          padding: "3rem 1.5rem",
           flexDirection: "column",
           boxSizing: "border-box",
-        }}
+          [theme.breakpoints.up("md")]: {
+            padding: "3rem 1.5rem 1.5rem 1.5rem",
+          },
+        })}
       >
-        <Box display="flex" justifyContent="center" sx={{ py: 3 }}>
+        <Box display="flex" justifyContent="center" sx={{ mb: 3 }}>
           <Avatar
             sx={{
               width: "4rem",
