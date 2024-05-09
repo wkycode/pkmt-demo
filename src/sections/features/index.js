@@ -1,4 +1,4 @@
-import { Box, Grid, Typography } from "@mui/material"
+import { Box, Grid } from "@mui/material"
 import FeatureCard from "../../components/FeatureCard"
 import ExitToAppIcon from "@mui/icons-material/ExitToApp"
 import MultipleStopIcon from "@mui/icons-material/MultipleStop"

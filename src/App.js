@@ -22,10 +22,6 @@ function App() {
     return () => window.removeEventListener("scroll", onScroll)
   }, [scrollTop])
 
-  useEffect(() => {
-    console.log(scrollTop)
-  })
-
   return (
     <ThemeProvider theme={theme}>
       <Box

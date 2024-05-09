@@ -53,7 +53,14 @@ const ContactUs = () => {
           sx={{ height: 28, m: 0.5, color: "#ffffff" }}
           orientation="vertical"
         />
-        <IconButton sx={{ p: "10px" }} aria-label="directions">
+        <IconButton
+          type="submit"
+          sx={{ p: "10px" }}
+          aria-label="directions"
+          onClick={(e) => {
+            e.preventDefault()
+          }}
+        >
           <DirectionsIcon />
         </IconButton>
       </Paper>

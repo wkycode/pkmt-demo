@@ -41,18 +41,18 @@ const AboutSection = () => {
         marginTop: "3.125rem",
         flexDirection: "column",
         justifyContent: "center",
-        [theme.breakpoints.up("lg")]: { marginTop: "7.5rem" },
+        [theme.breakpoints.up("md")]: { marginTop: "7.5rem" },
       })}
     >
       <Paper
         elevation={10}
-        sx={{
+        sx={(theme) => ({
           borderRadius: "2rem",
           background: "transparent",
           border: "2px solid rgba(255,255,255,0.5)",
-        }}
+        })}
       >
-        <Grid container spacing={6}>
+        <Grid container spacing={{ md: 6 }}>
           <Grid
             item
             xs={12}
@@ -65,12 +65,12 @@ const AboutSection = () => {
             }}
           >
             <Box
-              sx={{
-                position: "sticky",
-                // position: "-webkit-sticky;",
+              sx={(theme) => ({
                 top: 0,
-                padding: "4rem",
-              }}
+                padding: "3rem",
+                position: "sticky",
+                [theme.breakpoints.up("md")]: { padding: "4rem" },
+              })}
             >
               <Typography
                 variant="h2"
@@ -80,7 +80,7 @@ const AboutSection = () => {
                   marginTop: "1.25rem",
                   color: "#ffffff",
                   fontSize: "1.75rem",
-                  [theme.breakpoints.up("lg")]: { fontSize: "2.25rem" },
+                  [theme.breakpoints.up("md")]: { fontSize: "2.25rem" },
                 })}
               >
                 Private Key Management Technology
@@ -93,7 +93,7 @@ const AboutSection = () => {
                   marginTop: "1.25rem",
                   color: "#CBD1EA",
                   fontSize: "1rem",
-                  [theme.breakpoints.up("lg")]: {
+                  [theme.breakpoints.up("md")]: {
                     maxWidth: "500px",
                     fontSize: "1.25rem",
                   },
@@ -110,12 +110,16 @@ const AboutSection = () => {
             </Box>
           </Grid>
 
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={6} sx={{ padding: 0 }}>
             <Box
-              sx={{
+              sx={(theme) => ({
                 borderLeft: "1px solid rgba(255,255,255,0.55)",
-                padding: "2rem 0 ",
-              }}
+                margin: "1rem 3rem 3rem 3rem",
+                [theme.breakpoints.up("md")]: {
+                  margin: "0",
+                  padding: "2rem 0",
+                },
+              })}
             >
               {aboutContents.map((block, index) => {
                 return (
@@ -149,8 +153,9 @@ const AboutSection = () => {
                     >
                       {block.title}
                     </Typography>
-                    {block.content.map((p) => (
+                    {block.content.map((p, index) => (
                       <Typography
+                        key={index}
                         align="left"
                         sx={(theme) => ({
                           color: "#CBD1EA",
